@@ -1,7 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/editTodo/index"
+    "pages/index/index"
   ],
   "window": {
     "defaultTitle": "My App",
