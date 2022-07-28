@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "Todo app",
+  "usingComponents": {
+    "list-item": "@tiki.vn/tini-ui/es/list/list-item/index",
+    "textfield": "@tiki.vn/tini-ui/es/textfield/index",
+    "block-header": "components/block-header/index",
+    "block-variant": "components/block-variant/index",
+    "todo-item":"/pages/index/components/todo-item/index"
+  }
+}

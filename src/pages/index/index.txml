@@ -1,0 +1,15 @@
+<view class="todo-page">
+  <view class="todo-header">
+    <input placeholder="Your task" onInput="onTextTodoChange" value={{currentTask}} />
+    <view onTap="addTodoHandle">
+      <icon type="plus" size="20"></icon>
+    </view>
+  </view>
+
+  <view class="todo-list">
+    <view tiki:for="{{listTodos}}" tiki:key="id">
+      <todo-item item="{{item}}" onDeleteTodoHandle="onDeleteTodoHandle" onUpdateTodoHandle="onUpdateTodoHandle"></todo-item>
+    </view>
+  </view>
+
+</view>

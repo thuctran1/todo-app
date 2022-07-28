@@ -1,0 +1,6 @@
+<view class="todo-header">
+  <input placeholder="Your task" onInput="onTextTodoChange" value={{currentTask}} />
+  <view onTap="addTodoHandle">
+    <icon type="plus" size="20"></icon>
+  </view>
+</view>

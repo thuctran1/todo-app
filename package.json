@@ -1,0 +1,11 @@
+{
+  "name": "todo-app",
+  "version": "0.1.0",
+  "tiki": {
+    "appIdentifier": "app.todo",
+    "buildNumber": 1
+  },
+  "dependencies": {
+    "@tiki.vn/tini-ui": "^0.14.0"
+  }
+}

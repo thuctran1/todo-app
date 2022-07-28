@@ -1,0 +1,32 @@
+.todo-item{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2px;
+
+}
+
+.todo-item-editing{
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px #413f3f;
+  padding-right: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.todo-item-editing view{
+  display: flex;
+  align-items: center;
+  
+}
+
+.todo-item-editing input{
+  display: flex;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+.todo-item-decoration{
+  text-decoration-line:line-through
+}

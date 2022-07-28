@@ -1,0 +1,33 @@
+<view tiki:if="{{isEditing}}" class="todo-item-editing">
+  <input style="width:100%;" placeholder="Your task" onInput="onTextTodoChange" value={{currentTask}} />
+
+  <view style="display: flex;"> 
+    <view onTap="onHandleTapCancelEdit">
+      <icon type="close" size="20"></icon>
+    </view>
+  
+    <view onTap="onHandleTapEdit">
+      <icon type="checked_mark" size="20"></icon>
+    </view>
+  </view>
+  
+
+</view>
+
+<view tiki:else class="todo-item">
+  <view onTap="onHandleTapDone" style="width:100%">
+    <text tiki:if="{{item.isDone}}" class="todo-item-decoration">{{item.title}}</text>
+    <text tiki:else>{{item.title}}</text>
+  </view>
+
+  <view style=" display: flex;">
+    <view onTap="onHandleTapEdit">
+      <icon type="edit" size="20"></icon>
+    </view>
+
+    <view onTap="onHandleTapDelete">
+      <icon type="close" size="20"></icon>
+    </view>
+  </view>
+
+</view>
