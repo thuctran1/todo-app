@@ -1,16 +1,16 @@
 <view tiki:if="{{isEditing}}" class="todo-item-editing">
-  <input style="width:100%;" placeholder="Your task" onInput="onTextTodoChange" value={{currentTask}} />
+  <input style="width:100%;" placeholder="Your task" onInput="onTextTodoChange" onConfirm="onHandleTapEdit"
+    value={{currentTask}} />
 
-  <view style="display: flex;"> 
+  <view style="display: flex;">
     <view onTap="onHandleTapCancelEdit">
       <icon type="close" size="20"></icon>
     </view>
-  
+
     <view onTap="onHandleTapEdit">
       <icon type="checked_mark" size="20"></icon>
     </view>
   </view>
-  
 
 </view>
 

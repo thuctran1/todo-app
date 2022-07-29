@@ -64,22 +64,9 @@ Page({
       listTodos: this.data.listTodos.filter((e) => e.id != id),
     });
     this.onSaveData();
-  },
+  }, 
 
-  onClearData() {
-    my.clearStorage({
-      success: function () {
-        my.alert({ content: 'Xoá dữ liệu thành công' });
-      },
-      fail: function (res) {
-        my.alert({ content: res.errorMessage });
-      }
-    });
-  },
-
-  onLoad(query) {
-    //this.onClearData()
-  },
+  onLoad(query) {},
   onReady() {},
   onShow() {
     this.onReadData();
