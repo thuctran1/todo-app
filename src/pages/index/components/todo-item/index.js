@@ -19,9 +19,9 @@ Component({
   },
 
   methods: {
-    onHandleTapDelete() {
+    async onHandleTapDelete() {
       try {
-        let res = utils.getConfirm(
+        let res = await utils.getConfirm(
           "Confirm delete",
           "Are you sure you want to delete this task?"
         );
