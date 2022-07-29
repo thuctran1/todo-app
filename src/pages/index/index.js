@@ -7,23 +7,22 @@ Page({
   },
 
   onSaveData() {
-    utils
-      .setStorage("listTodos", this.data.listTodos)
-      .then((res) => {})
-      .catch((err) => console.log("Err", err));
+    try {
+      utils.setStorage("listTodos", this.data.listTodos);
+    } catch (e) {
+      console.log("Err", err);
+    }
   },
 
-  onReadData() {
-    utils
-      .getStorage("listTodos")
-      .then((data) => {
-        if (data) {
-          this.setData({
-            listTodos: data,
-          });
-        }
-      })
-      .catch((err) => console.log("Err", err));
+  async onReadData() {
+    try {
+      let data = await utils.getStorage("listTodos");
+      this.setData({
+        listTodos: data,
+      });
+    } catch (err) {
+      console.log(err);
+    }
   },
 
   onTextTodoChange(e) {
@@ -56,7 +55,7 @@ Page({
         return e.id == task.id ? task : e;
       }),
     });
-     this.onSaveData();
+    this.onSaveData();
   },
 
   onDeleteTodoHandle(id) {
@@ -64,7 +63,7 @@ Page({
       listTodos: this.data.listTodos.filter((e) => e.id != id),
     });
     this.onSaveData();
-  }, 
+  },
 
   onLoad(query) {},
   onReady() {},

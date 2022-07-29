@@ -20,17 +20,17 @@ Component({
 
   methods: {
     onHandleTapDelete() {
-      utils
-        .getConfirm(
+      try {
+        let res = utils.getConfirm(
           "Confirm delete",
           "Are you sure you want to delete this task?"
-        )
-        .then((res) => {
-          if (res) {
-            this.props.onDeleteTodoHandle(this.props.item.id);
-          }
-        })
-        .catch();
+        );
+        if (res) {
+          this.props.onDeleteTodoHandle(this.props.item.id);
+        }
+      } catch (e) {
+        console.loh("Err", e);
+      }
     },
 
     onHandleTapCancelEdit() {
