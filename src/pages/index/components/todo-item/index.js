@@ -1,4 +1,4 @@
-import utils from "../../../../utils/index";
+import {getConfirm} from "../../../../utils";
 
 Component({
   props: {
@@ -21,7 +21,7 @@ Component({
   methods: {
     async onHandleTapDelete() {
       try {
-        let res = await utils.getConfirm(
+        let res = await getConfirm(
           "Confirm delete",
           "Are you sure you want to delete this task?"
         );

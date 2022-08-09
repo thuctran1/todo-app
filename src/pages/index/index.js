@@ -1,5 +1,13 @@
-import utils from "../../utils/index";
+import {setStorage, getStorage, makeUuid} from "../../utils/index";
+import {TODO_STORAGE_KEY} from '../../constants'
+import {
+  useSelector,
+  useDispatch,
+} from '@tiki.vn/redux-miniprogram-bindings';
 
+import {getTodosThunk} from '../../store/slices/thunk'
+
+const dispatch = useDispatch()
 Page({
   data: {
     listTodos: [],
@@ -8,7 +16,7 @@ Page({
 
   onSaveData() {
     try {
-      utils.setStorage("listTodos", this.data.listTodos);
+      setStorage(TODO_STORAGE_KEY, this.data.listTodos);
     } catch (e) {
       console.log("Err", err);
     }
@@ -16,7 +24,8 @@ Page({
 
   async onReadData() {
     try {
-      let data = await utils.getStorage("listTodos");
+      dispatch(getTodosThunk())
+      let data = await getStorage(TODO_STORAGE_KEY);
       this.setData({
         listTodos: data,
       });
@@ -33,7 +42,7 @@ Page({
 
   addTodoHandle() {
     if (this.data.currentTask != "") {
-      let uuid = utils.makeUuid();
+      let uuid = makeUuid();
 
       let newTask = {
         id: uuid,

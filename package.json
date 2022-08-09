@@ -6,6 +6,9 @@
     "buildNumber": 1
   },
   "dependencies": {
-    "@tiki.vn/tini-ui": "^0.14.0"
+    "@reduxjs/toolkit": "^1.7.2",
+    "@tiki.vn/redux-miniprogram-bindings": "^1.4.4",
+    "@tiki.vn/tini-ui": "^0.14.0",
+    "redux-logger": "^3.0.6"
   }
 }
